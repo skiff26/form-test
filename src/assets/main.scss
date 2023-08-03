@@ -1,0 +1,125 @@
+@import './base.scss';
+
+.form {
+	height: max-content;
+	background: #242424;
+	min-height: 305px;
+	border-radius: 8px;
+	max-width: 80%;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 30px;
+	position: relative;
+	@media (max-width: 680px) {
+		max-width: 100%;
+	}
+	@media (max-width: 540px) {
+		padding: 20px 15px;
+	}
+	&__page {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		font-size: 14px;
+		opacity: 0.9;
+		@media (max-width: 540px) {
+			top: 20px;
+			right: 15px;
+		}
+	}
+
+	&__field {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		@media (max-width: 540px) {
+			font-size: 14px;
+		}
+	}
+
+	&__label {
+		padding-right: 80px;
+	}
+
+	&__textarea {
+		resize: none;
+		height: 160px;
+		border-radius: 8px;
+		padding: 20px;
+		background: #363434;
+		font-size: 16px;
+		color: rgba(255, 255, 255, 0.87);
+		@media (max-width: 540px) {
+			padding: 15px;
+			font-size: 14px;
+		}
+		&:focus {
+			box-shadow: 0 0 5px 1px rgb(65, 65, 214);
+		}
+		&::placeholder {
+			color: rgba(255, 255, 255, 0.87);
+			font-size: 14px;
+		}
+	}
+
+	&__select {
+		padding: 20px;
+		font-size: 14px;
+		font-weight: 600;
+		background: #363434;
+		border-radius: 8px;
+		color: rgba(255, 255, 255, 0.87);
+	}
+
+	&__color-rating {
+		width: 350px;
+		margin: 0 auto;
+		padding: 5px;
+		border-bottom: 1px solid #363636;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 15px;
+		input {
+			cursor: grab;
+		}
+		@media (max-width: 400px) {
+			width: 100%;
+			flex-direction: column;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 20px;
+		button {
+			color: white;
+			padding: 10px 20px;
+			border-radius: 8px;
+			font-size: 16px;
+			transition: all 0.3s ease 0s;
+			&:disabled {
+				opacity: 0.6;
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	&__prev {
+		background: #774c1c;
+		&:not([disabled]):hover {
+			background: #8f5a1e;
+		}
+	}
+
+	&__next {
+		background: #1c8512;
+		&:not([disabled]):hover {
+			background: #23a117;
+		}
+	}
+}
